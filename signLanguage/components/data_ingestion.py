@@ -7,8 +7,6 @@ from signLanguage.exception import SignException
 from signLanguage.entity.config_entity import DataIngestionConfig
 from signLanguage.entity.artifacts_entity import DataIngestionArtifact
 
-
-
 class DataIngestion:
     def __init__(self, data_ingestion_config: DataIngestionConfig = DataIngestionConfig()):
         try:
@@ -16,8 +14,6 @@ class DataIngestion:
         except Exception as e:
            raise SignException(e, sys)
         
-    
-
     def download_data(self)-> str:
         '''
         Fetch data from the url
@@ -37,9 +33,6 @@ class DataIngestion:
         except Exception as e:
             raise SignException(e, sys)
         
-
-    
-
     def extract_zip_file(self,zip_file_path: str)-> str:
         """
         zip_file_path: str
@@ -58,8 +51,6 @@ class DataIngestion:
         except Exception as e:
             raise SignException(e, sys)
         
-
-
     def initiate_data_ingestion(self)-> DataIngestionArtifact:
         logging.info("Entered initiate_data_ingestion method of Data_Ingestion class")
         try: 
